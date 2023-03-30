@@ -51,6 +51,7 @@
   docker cp html/index.html apache:/usr/local/apache2/htdocs/
   docker cp html/index.html apache:/usr/local/apache2/htdocs/
   docker commit apache my_apache
+  vi index.html  >> Hello Docker
   docker rm apache
   ufw allow 80
   curl localohost:80
