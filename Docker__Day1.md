@@ -38,6 +38,7 @@
   docker ps -a
   docker rm a9c2083eb282
   docker run -d -p 9898:80 --name apache2 -v "$(pwd)/html:/usr/local/apache2/htdocs/" httpd:latest
+  ufw allow 9898
   curl localohost:9898
 ```
 
@@ -51,6 +52,7 @@
   docker cp html/index.html apache:/usr/local/apache2/htdocs/
   docker commit apache my_apache
   docker rm apache
+  ufw allow 80
   curl localohost:80
 ```
 
